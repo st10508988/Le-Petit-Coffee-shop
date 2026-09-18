@@ -340,6 +340,11 @@ Meaningful image file names and descriptive alternative text are used where appl
 
 The CSS also ensures that images resize appropriately on different screen sizes.
 
+## Website Screenshots
+
+![Le Petit Coffee shop iphone 16 view](images/iphone%2016%20screenshot.png)
+
+![Le Petit Coffee shop ipad views](images/ipad%20screenshot.png)
 ---
 
 ## 13. Project Structure
