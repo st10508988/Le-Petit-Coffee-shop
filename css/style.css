@@ -1,0 +1,856 @@
+/* =========================================
+   LE PETITE COFFEE - MAIN STYLESHEET
+   ========================================= */
+
+
+/* =========================================
+   1. GENERAL WEBSITE STYLING
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Sanskrit Text", Arial, sans-serif;
+    background-color: #f8f1e5;
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.12),
+            rgba(255, 255, 255, 0.12)
+        ),
+        url("../images/coffee-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #3e2723;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img,
+iframe {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+main > section:not(.hero) {
+    background-color: rgba(248, 241, 229, 0.84);
+}
+
+
+/* =========================================
+   2. HEADINGS
+   ========================================= */
+
+h1,
+h2,
+h3 {
+    font-family: "Aptos Display", Arial, sans-serif;
+}
+
+h1 {
+    font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.55rem, 3vw, 2.2rem);
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+}
+
+
+/* =========================================
+   3. NAVIGATION BAR
+   ========================================= */
+
+header {
+    background-color: #3e2723;
+    width: 100%;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 30px;
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #f8f1e5;
+    text-decoration: none;
+    font-family: "Aptos Display", Arial, sans-serif;
+    font-size: 1.55rem;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border: 2px solid #f8f1e5;
+    border-radius: 50%;
+}
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #c8d5b9;
+}
+
+.nav-links a::before {
+    content: "\2615";
+    position: absolute;
+    left: 50%;
+    bottom: -22px;
+    transform: translateX(-50%) scale(0);
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+}
+
+.nav-links a:hover::before,
+.nav-links a:focus-visible::before,
+.nav-links a.active::before {
+    transform: translateX(-50%) scale(1);
+}
+
+.coffee-click {
+    position: fixed;
+    z-index: 1000;
+    pointer-events: none;
+    color: #6f4e37;
+    font-size: 1.8rem;
+    animation: coffee-click 0.65s ease-out forwards;
+}
+
+@keyframes coffee-click {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 8px) scale(0.7);
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -28px) scale(1.1);
+    }
+}
+
+
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(62, 39, 35, 0.70),
+            rgba(62, 39, 35, 0.70)
+        ),
+        url("../images/coffee-background.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    color: #ffffff;
+}
+
+.hero-content h1 {
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   5. BUTTONS
+   ========================================= */
+
+.btn {
+    display: inline-block;
+
+    background-color: #6f4e37;
+    color: #ffffff;
+
+    padding: 12px 25px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    margin: 5px;
+
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2f4f3a;
+}
+
+
+/* =========================================
+   6. GENERAL SECTIONS
+   ========================================= */
+
+section {
+    padding: 60px 8%;
+    width: 100%;
+}
+
+.introduction,
+.about-section,
+.mission-section,
+.vision-section,
+.audience-section,
+.contact-section,
+.location-section,
+.social-section,
+.contact-form-section,
+.enquiry-section {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+
+/* =========================================
+   7. PAGE HEADER
+   ========================================= */
+
+.page-header {
+    background-color: #e8dcc8;
+    text-align: center;
+}
+
+.page-header h1 {
+    color: #3e2723;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+}
+
+
+/* =========================================
+   8. INTRODUCTION
+   ========================================= */
+
+.introduction {
+    background-color: #ffffff;
+}
+
+.introduction p {
+    max-width: 850px;
+    margin: 15px auto;
+}
+
+
+/* =========================================
+   9. FEATURED PRODUCTS
+   ========================================= */
+
+.featured {
+    background-color: #f8f1e5;
+    text-align: center;
+}
+
+.featured-container {
+    max-width: 1100px;
+    margin: 30px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 25px;
+}
+
+.featured-item {
+    background-color: #ffffff;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.featured-item h3 {
+    margin: 15px 0 10px;
+}
+
+.featured-item p {
+    margin-bottom: 10px;
+}
+
+.featured-item > img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* =========================================
+   10. IMAGE PLACEHOLDERS
+   ========================================= */
+
+.image-placeholder {
+    height: 200px;
+    overflow: hidden;
+
+    background-color: #e8dcc8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 8px;
+
+    color: #3e2723;
+    font-weight: bold;
+}
+
+.image-placeholder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.menu-item img,
+.menu-section > img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.menu-section > img {
+    max-width: 900px;
+    margin: 0 auto 25px;
+}
+
+.menu-item h3,
+.menu-item p {
+    color: #3e2723;
+}
+
+.menu-item .price {
+    color: #2f4f3a;
+}
+
+.menu-item img {
+    height: 200px;
+}
+
+
+/* =========================================
+   11. MENU
+   ========================================= */
+
+.menu-section {
+    max-width: 1100px;
+    margin: auto;
+
+    text-align: center;
+
+    background-color: #ffffff;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+
+    gap: 25px;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+.menu-item {
+    padding: 25px;
+
+    background-color: #f8f1e5;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
+}
+
+.menu-item h3 {
+    margin: 15px 0 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #2f4f3a;
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   12. ABOUT PAGE
+   ========================================= */
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.about-content p {
+    margin: 15px 0;
+}
+
+.mission-section {
+    background-color: #e8dcc8;
+}
+
+.vision-section {
+    background-color: #ffffff;
+}
+
+.mission-section p,
+.vision-section p {
+    max-width: 800px;
+    margin: 0 auto 25px;
+}
+
+.about-feature-image {
+    display: block;
+    width: min(100%, 600px);
+    height: 280px;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.audience-section {
+    background-color: #f8f1e5;
+}
+
+.audience-list {
+    max-width: 1000px;
+    margin: 30px auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.audience-item {
+    background-color: #ffffff;
+
+    padding: 25px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.audience-item h3 {
+    min-height: 2.8em;
+}
+
+.audience-item p {
+    flex: 1;
+    margin: 0 0 18px;
+}
+
+.audience-item img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+
+/* =========================================
+   13. ENQUIRY AND CONTACT FORMS
+   ========================================= */
+
+.enquiry-section,
+.contact-form-section {
+    background-color: #ffffff;
+}
+
+.enquiry-content,
+.contact-form-section form {
+    max-width: 700px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #b8aa96;
+
+    border-radius: 5px;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid #6f4e37;
+}
+
+
+/* =========================================
+   14. CONTACT DETAILS
+   ========================================= */
+
+.contact-section {
+    background-color: #ffffff;
+}
+
+.contact-details {
+    max-width: 1000px;
+    margin: 30px auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+
+    gap: 20px;
+}
+
+.contact-item {
+    background-color: #f8f1e5;
+
+    padding: 25px;
+
+    border-radius: 8px;
+}
+
+.contact-item h3 {
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   15. MAP
+   ========================================= */
+
+.location-section {
+    background-color: #e8dcc8;
+}
+
+.map-container {
+    max-width: 900px;
+    height: clamp(260px, 50vw, 420px);
+
+    margin: 25px auto;
+
+    background-color: #ffffff;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
+}
+
+.map-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+}
+
+.map-link {
+    margin-top: 0;
+}
+
+
+/* =========================================
+   16. SOCIAL MEDIA
+   ========================================= */
+
+.social-section {
+    background-color: #ffffff;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #2f4f3a;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    margin: 0 10px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   17. CALL TO ACTION
+   ========================================= */
+
+.call-to-action {
+    text-align: center;
+
+    background-color: #2f4f3a;
+
+    color: #ffffff;
+}
+
+.call-to-action p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+
+/* =========================================
+   18. FOOTER
+   ========================================= */
+
+footer {
+    background-color: #3e2723;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    padding: 35px 20px;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.footer-content h3 {
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    margin: 8px 0;
+}
+
+
+/* =========================================
+   19. MOBILE RESPONSIVE DESIGN
+   ========================================= */
+
+@media (min-width: 769px) and (max-width: 1050px) {
+
+    .navbar {
+        padding: 18px 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .featured-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .audience-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero-content {
+        padding: 25px 15px;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .featured-item,
+    .menu-item {
+        padding: 18px;
+    }
+
+    .audience-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .audience-item h3 {
+        min-height: 0;
+    }
+
+    .menu-item img,
+    .menu-section > img,
+    .featured-item > img,
+    .image-placeholder {
+        height: 180px;
+    }
+
+    .menu-container {
+        width: 100%;
+    }
+
+    section {
+        padding: 45px 6%;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .logo a {
+        font-size: 1.35rem;
+    }
+
+    .logo img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    section {
+        padding: 35px 5%;
+    }
+
+    .audience-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 360px;
+    }
+
+    .hero-content img {
+        width: 100%;
+        height: auto;
+    }
+
+    .btn {
+        padding: 11px 18px;
+    }
+
+    .menu-item img,
+    .menu-section > img,
+    .featured-item > img,
+    .image-placeholder {
+        height: 160px;
+    }
+
+}
