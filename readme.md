@@ -480,3 +480,104 @@ https://www.w3.org/TR/css/
 **Project:** Le Petite Coffee Website
 
 **Year:** 2026
+
+## Part 3: Enhancing Functionality and SEO
+
+### 1. JavaScript Enhancements
+
+JavaScript was used to improve the functionality and interactivity of the Le Petite Coffee website.
+
+The enhancements include menu search functionality, image enlargement through a lightbox, form validation and user feedback. These features were added to improve usability and allow visitors to interact more easily with the website.
+
+### 2. Form Functionality and Validation
+
+The enquiry and contact forms were improved using HTML form attributes and JavaScript validation.
+
+The enquiry form collects the customer's contact information, enquiry category and message. It provides feedback after valid input is submitted.
+
+The contact form collects general messages and prepares an email using the recipient address configured in the JavaScript code. The email-submission method and recipient must be configured and tested before the website is considered fully operational.
+
+### 3. Search Engine Optimisation
+
+SEO improvements include page-specific title tags, meta descriptions, structured headings, descriptive image alternative text and internal links.
+
+The website also includes `robots.txt` and `sitemap.xml` files to help search engines discover the website's pages after publication.
+
+### 4. Responsive Design and Performance
+
+The existing CSS media queries were retained and reviewed to support desktop, tablet and mobile layouts.
+
+Image sizes, loading behaviour and layout consistency were also considered as part of the performance improvements.
+
+### 5. Testing
+
+The website should be tested to confirm that:
+
+* Navigation links open the correct pages.
+* Menu search filters items correctly.
+* Images open in the lightbox and can be closed.
+* Forms reject invalid or incomplete input.
+* Valid form input produces appropriate feedback.
+* The contact email workflow works on a configured device.
+* The website remains usable on mobile screens.
+* SEO metadata is present on all five pages.
+
+### 6. Deployment
+
+The website is intended to be published using a free static website hosting platform. After deployment, the final website URL must be added to the sitemap and robots file.
+
+### 7. Change Log
+
+The Part 3 change log should record the JavaScript functionality, form changes, SEO improvements, performance changes, testing corrections and deployment activities. All corrections made in response to Part 2 feedback should also be documented.
+## Part 3: Enhancing Functionality and SEO
+
+### 1. JavaScript Enhancements
+
+JavaScript was used to improve the functionality and interactivity of the Le Petite Coffee website.
+
+The enhancements include menu search functionality, image enlargement through a lightbox, form validation and user feedback. These features were added to improve usability and allow visitors to interact more easily with the website.
+
+### 2. Form Functionality and Validation
+
+The enquiry and contact forms were improved using HTML form attributes and JavaScript validation.
+
+The enquiry form collects the customer's contact information, enquiry category and message. It provides feedback after valid input is submitted.
+
+The contact form collects general messages and prepares an email using the recipient address configured in the JavaScript code. The email-submission method and recipient must be configured and tested before the website is considered fully operational.
+
+### 3. Search Engine Optimisation
+
+SEO improvements include page-specific title tags, meta descriptions, structured headings, descriptive image alternative text and internal links.
+
+The website also includes `robots.txt` and `sitemap.xml` files to help search engines discover the website's pages after publication.
+
+### 4. Responsive Design and Performance
+
+The existing CSS media queries were retained and reviewed to support desktop, tablet and mobile layouts.
+
+Image sizes, loading behaviour and layout consistency were also considered as part of the performance improvements.
+
+### 5. Testing
+
+The website should be tested to confirm that:
+
+* Navigation links open the correct pages.
+* Menu search filters items correctly.
+* Images open in the lightbox and can be closed.
+* Forms reject invalid or incomplete input.
+* Valid form input produces appropriate feedback.
+* The contact email workflow works on a configured device.
+* The website remains usable on mobile screens.
+* SEO metadata is present on all five pages.
+
+### 6. Deployment
+
+The website is intended to be published using a free static website hosting platform. After deployment, the final website URL must be added to the sitemap and robots file.
+
+### 7. Change Log
+
+The Part 3 change log should record the JavaScript functionality, form changes, SEO improvements, performance changes, testing corrections and deployment activities. All corrections made in response to Part 2 feedback should also be documented.
+
+### 8.Refrences
+
+Mozilla Development (MDN) (n.d)JavaScript. Available at:https://developer.mozilla.org/en-US/docs/Web/JavaScript (Accessed: 28 October 2026)

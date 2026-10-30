@@ -122,3 +122,91 @@ A universal CSS reset was added:
     padding: 0;
     box-sizing: border-box;
 }
+# Le Petite Coffee Website — Part 3 Change Log
+
+## Part 3: JavaScript Enhancements
+
+* Added JavaScript functionality to improve user interaction.
+* Added menu search functionality to filter menu items.
+* Implemented an image lightbox for supported gallery and product images.
+* Added keyboard support for closing the image lightbox.
+
+## Part 3: Forms
+
+* Updated the enquiry form with required fields and input constraints.
+* Updated the contact form to collect general messages.
+* Added client-side form validation.
+* Added feedback messages for form submissions.
+* Prepared the contact form for email submission.
+
+## Part 3: SEO
+
+* Added unique page titles and meta descriptions.
+* Reviewed heading structures.
+* Added descriptive image alternative text where appropriate.
+* Reviewed internal navigation links.
+* Created `robots.txt`.
+* Created `sitemap.xml`.
+
+## Part 3: Performance and Accessibility
+
+* Reviewed responsive layouts.
+* Added keyboard focus styling where appropriate.
+* Reviewed image loading and file sizes.
+
+## Testing and Corrections
+
+* Tested navigation and interactive features.
+* Tested form validation with valid and invalid inputs.
+* Reviewed the website on different screen sizes.
+* Recorded additional corrections made after testing.
+
+## Deployment
+
+* Prepared the website for static hosting.
+* Updated the sitemap and robots file with the published website URL after deployment.
+* Recorded the final published URL when available.
+# Le Petite Coffee Website — Part 3 Change Log
+
+## Part 3: JavaScript Enhancements
+
+* Added JavaScript functionality to improve user interaction.
+* Added menu search functionality to filter menu items.
+* Implemented an image lightbox for supported gallery and product images.
+* Added keyboard support for closing the image lightbox.
+
+## Part 3: Forms
+
+* Updated the enquiry form with required fields and input constraints.
+* Updated the contact form to collect general messages.
+* Added client-side form validation.
+* Added feedback messages for form submissions.
+* Prepared the contact form for email submission.
+
+## Part 3: SEO
+
+* Added unique page titles and meta descriptions.
+* Reviewed heading structures.
+* Added descriptive image alternative text where appropriate.
+* Reviewed internal navigation links.
+* Created `robots.txt`.
+* Created `sitemap.xml`.
+
+## Part 3: Performance and Accessibility
+
+* Reviewed responsive layouts.
+* Added keyboard focus styling where appropriate.
+* Reviewed image loading and file sizes.
+
+## Testing and Corrections
+
+* Tested navigation and interactive features.
+* Tested form validation with valid and invalid inputs.
+* Reviewed the website on different screen sizes.
+* Recorded additional corrections made after testing.
+
+## Deployment
+
+* Prepared the website for static hosting.
+* Updated the sitemap and robots file with the published website URL after deployment.
+* Recorded the final published URL when available.

@@ -374,6 +374,11 @@ section {
     border-radius: 8px;
 }
 
+.image-placeholder img.tea-image {
+    object-fit: cover;
+    object-position: center;
+}
+
 .menu-item img,
 .menu-section > img {
     display: block;
@@ -399,6 +404,7 @@ section {
 
 .menu-item img {
     height: 200px;
+    object-position: center;
 }
 
 .product-image-gallery {
@@ -982,4 +988,25 @@ footer {
     .product-image {
         transition: none;
     }
+}
+/* Part 3: Form Feedback */
+
+.form-feedback {
+    margin: 15px 0;
+    padding: 14px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.form-feedback.error {
+    color: #8b1e1e;
+    background-color: #fbe9e7;
+    border: 1px solid #d99a93;
+}
+
+.form-feedback.success {
+    color: #20552d;
+    background-color: #e8f5e9;
+    border: 1px solid #9ac5a0;
 }

@@ -1,0 +1,5 @@
+```text
+User-agent: *
+Allow: /
+
+Sitemap: https://file:///C:/Users/Admin/OneDrive%20-%20ADvTECH%20Ltd/Le%20Petit%20Coffee%20shop/index.html
