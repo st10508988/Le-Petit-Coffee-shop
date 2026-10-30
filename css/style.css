@@ -401,6 +401,21 @@ section {
     height: 200px;
 }
 
+.product-image-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.product-image-gallery img.product-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 8px;
+}
 
 /* =========================================
    11. MENU
@@ -417,13 +432,22 @@ section {
 
 .menu-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
 
     gap: 25px;
 
-    max-width: 900px;
+    max-width: 1100px;
 
     margin: auto;
+}
+
+.coffee-menu {
+    grid-template-columns: 1fr;
+}
+
+.menu-container > .menu-item {
+    width: 100%;
+    margin-inline: auto;
 }
 
 .menu-item {
@@ -534,14 +558,27 @@ section {
    ========================================= */
 
 .enquiry-section,
-.contact-form-section {
+.contact-form-section,
+.pickup-order-section {
     background-color: #ffffff;
 }
 
 .enquiry-content,
-.contact-form-section form {
+.contact-form-section form,
+.pickup-order-content {
     max-width: 700px;
     margin: auto;
+}
+
+.pickup-order-total {
+    margin: 15px 0;
+    color: #2f4f3a;
+    font-weight: bold;
+}
+
+.order-status.error {
+    color: #9b1c1c;
+    font-weight: bold;
 }
 
 .form-group {
@@ -853,4 +890,96 @@ footer {
         height: 160px;
     }
 
+}
+/* Part 3: Menu Search */
+
+.menu-search-container {
+    max-width: 700px;
+    margin: 25px auto;
+    text-align: left;
+}
+
+.menu-search-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.menu-search-container input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #b8aa96;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.menu-search-container input:focus-visible {
+    outline: 3px solid #6f4e37;
+    outline-offset: 2px;
+}
+
+.menu-item[hidden],
+.menu-section[hidden] {
+    display: none !important;
+}
+/* Part 3: Image Lightbox */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 42px;
+    cursor: pointer;
+}
+
+.lightbox-close:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+.gallery-image,
+.menu-image,
+.product-image {
+    transition: transform 0.25s ease;
+}
+
+.gallery-image:hover,
+.menu-image:hover,
+.product-image:hover {
+    transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-image,
+    .menu-image,
+    .product-image {
+        transition: none;
+    }
 }

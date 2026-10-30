@@ -74,6 +74,17 @@
 
         </section>
 
+        <div class="menu-search-container">
+            <label for="menu-search">Search the menu</label>
+            <input
+                type="search"
+                id="menu-search"
+                name="menu-search"
+                placeholder="Search coffee, tea, pastries..."
+                autocomplete="off"
+                aria-describedby="menu-search-results">
+            <p id="menu-search-results" role="status" aria-live="polite"></p>
+        </div>
 
         <!-- =========================
              COFFEE
@@ -82,12 +93,13 @@
 
             <h2>Coffee</h2>
 
-            <div class="menu-container">
+            <div class="menu-container coffee-menu">
 
                 <article class="menu-item">
 
-                    <div class="image-placeholder">
-                        <img src="images/coffee art.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
+                    <div class="product-image-gallery">
+                        <img class="product-image gallery-image" src="images/coffee art.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
+                        <img class="product-image gallery-image" src="images/coffees.jpg" alt="Freshly brewed coffee" width="600" height="400">
                     </div>
 
                     <h3>Freshly Brewed Coffee</h3>
@@ -97,7 +109,6 @@
                         environment.
                     </p>
 
-                    <img src="images/coffees.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
                     <p class="price">
                         Price's start at R20.00 for a small cup of coffee and R30.00 for a large cup of coffee.
                     </p>
@@ -107,13 +118,16 @@
 
                 <article class="menu-item">
 
+                    <div class="product-image-gallery">
+                        <img class="product-image gallery-image" src="images/coffee4.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
+                    </div>
+
                     <h3>Specialty Coffee</h3>
 
                     <p>
                         Enjoy a delicious coffee prepared to suit
                         your taste.
                     </p>
-                    <img src="images/coffee4.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
                     <p class="price">
                         Espresso: R20.00 | Cappuccino: R25.00 | Latte: R30.00 | Mocha: R35.00
                     </p>
@@ -131,10 +145,14 @@
         <section class="menu-section">
 
             <h2>Tea</h2>
-            <img src="images/tea1.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
             <div class="menu-container">
 
                 <article class="menu-item">
+
+                    <div class="product-image-gallery">
+                        <img class="product-image gallery-image" src="images/tea1.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
+                        <img class="product-image gallery-image" src="images/tea2.jpg" alt="Prepared tea" width="600" height="400">
+                    </div>
 
                     <h3>Freshly Prepared Tea</h3>
                    
@@ -142,7 +160,6 @@
                         Enjoy a warm cup of tea in our cosy coffee
                         shop environment.
                     </p>
-                     <img src="images/tea2.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
                     <p class="price">
                         Rooibos Tea: R20.00 | Green Tea: R25.00 | Black Tea: R30.00 | Herbal Tea: R35.00
                     </p>
@@ -165,8 +182,9 @@
 
                 <article class="menu-item">
 
-                    <div class="image-placeholder">
-                        <img src="images/Hot chocolate1.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
+                    <div class="product-image-gallery">
+                        <img class="product-image gallery-image" src="images/Hot chocolate1.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
+                        <img class="product-image gallery-image" src="images/Hot chocolate2.jpg" alt="Hot chocolate" width="600" height="400">
                     </div>
 
                     <h3>Hot Chocolate</h3>
@@ -174,7 +192,6 @@
                     <p>
                         A warm and delicious chocolate drink.
                     </p>
-                    <img src="images/Hot chocolate2.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
                     <p class="price">
                         Prices start at R25.00 for a small cup of hot chocolate and R35.00 for a large cup of hot chocolate.
                     </p>
@@ -197,8 +214,9 @@
 
                 <article class="menu-item">
 
-                    <div class="image-placeholder">
-                        <img src="images/pastry2.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
+                    <div class="product-image-gallery">
+                        <img class="product-image gallery-image" src="images/pastry2.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
+                        <img class="product-image gallery-image" src="images/pastry3.jpg" alt="Fresh pastries" width="600" height="400">
                     </div>
 
                     <h3>Fresh Pastries</h3>
@@ -207,7 +225,6 @@
                         A variety of pastries available to enjoy
                         with your favourite drink.
                     </p>
-                    <img src="images/pastry3.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
                     <p class="price">
                         Prices start at R15.00 for a small pastry and R25.00 for a large pastry.
                     </p>
@@ -230,8 +247,9 @@
 
                 <article class="menu-item">
 
-                    <div class="image-placeholder">
-                        <img src="images/sandwich1.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
+                    <div class="product-image-gallery">
+                        <img class="product-image gallery-image" src="images/sandwich1.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
+                        <img class="product-image gallery-image" src="images/sandwich2.jpg" alt="Freshly prepared sandwich" width="600" height="400">
                     </div>
 
                     <h3>Sandwiches</h3>
@@ -240,7 +258,6 @@
                         Freshly prepared sandwiches for a delicious
                         and convenient meal.
                     </p>
-                    <img src="images/sandwich2.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
                     <p class="price">
                         Prices start at R30.00 for a small sandwich and R40.00 for a large sandwich.
                     </p>
@@ -263,8 +280,9 @@
 
                 <article class="menu-item">
 
-                    <div class="image-placeholder">
-                        <img src="images/lightmeal.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
+                    <div class="product-image-gallery">
+                        <img class="product-image gallery-image" src="images/lightmeal.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
+                        <img class="product-image gallery-image" src="images/lightmeal2.jpg" alt="Light meal" width="600" height="400">
                     </div>
 
                     <h3>Light Meals</h3>
@@ -273,7 +291,6 @@
                         Enjoy a selection of light meals in a cosy
                         and welcoming environment.
                     </p>
-                    <img src="images/lightmeal2.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
                     <p class="price">
                         Prices start at R30.00 for a small light meal and R40.00 for a large light meal.
                     </p>
@@ -282,6 +299,82 @@
 
             </div>
 
+        </section>
+
+        <section class="pickup-order-section">
+            <div class="pickup-order-content">
+                <h2>Order for Pickup</h2>
+                <p>
+                    Choose coffee or tea and your options below. Orders are for pickup only.
+                    Online order submission is not available until the order service is configured.
+                </p>
+
+                <form id="pickup-order-form">
+                    <div class="form-group">
+                        <label for="order-name">Full Name:</label>
+                        <input type="text" id="order-name" name="name" autocomplete="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="order-email">Email Address:</label>
+                        <input type="email" id="order-email" name="email" autocomplete="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="order-phone">Phone Number:</label>
+                        <input type="tel" id="order-phone" name="phone" autocomplete="tel" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="order-product">Coffee or Tea:</label>
+                        <select id="order-product" name="product" required>
+                            <option value="">Select a drink</option>
+                            <optgroup label="Coffee">
+                                <option value="fresh-coffee">Freshly brewed coffee</option>
+                                <option value="espresso">Espresso</option>
+                                <option value="cappuccino">Cappuccino</option>
+                                <option value="latte">Latte</option>
+                                <option value="mocha">Mocha</option>
+                            </optgroup>
+                            <optgroup label="Tea">
+                                <option value="rooibos-tea">Rooibos Tea</option>
+                                <option value="green-tea">Green Tea</option>
+                                <option value="black-tea">Black Tea</option>
+                                <option value="herbal-tea">Herbal Tea</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="order-size">Size:</label>
+                        <select id="order-size" name="size" required disabled>
+                            <option value="">Select a drink first</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="order-quantity">Quantity:</label>
+                        <input type="number" id="order-quantity" name="quantity" min="1" max="20" value="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pickup-date">Preferred Pickup Date:</label>
+                        <input type="date" id="pickup-date" name="pickupDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pickup-time">Preferred Pickup Time:</label>
+                        <input type="time" id="pickup-time" name="pickupTime" required>
+                    </div>
+
+                    <p id="order-total" class="pickup-order-total" role="status" aria-live="polite">
+                        Select a drink to see its price.
+                    </p>
+                    <p id="order-status" class="order-status" role="status" aria-live="polite"></p>
+
+                    <button type="submit" class="btn">Place Pickup Order</button>
+                </form>
+            </div>
         </section>
 
 
@@ -350,7 +443,7 @@
 
 
     <!-- Link to JavaScript -->
-    <script src="js/script.js"></script>
+    <script src="javascript/script.js"></script>
 
 </body>
 
