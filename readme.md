@@ -97,7 +97,7 @@ It includes:
 - Opening hours.
 - Social media links.
 - Contact form.
-- Google Maps location functionality.
+- A clickable location image that opens Google Maps directions in a new tab.
 - Call-to-action elements.
 
 ---
@@ -510,7 +510,7 @@ Size and price options use the prices shown on the menu. For specialty coffee an
 
 SEO improvements include page-specific title tags, meta descriptions, structured headings, descriptive image alternative text and internal links.
 
-The project includes `robots.txt` and `sitemap.xml`. The website has not been deployed; update these files with the final public website URL before publishing.
+The project includes `robots.txt` and `sitemap.xml`. Since the website has not been deployed and has no public URL, the sitemap contains no page URLs and `robots.txt` does not advertise a sitemap location. Add the absolute public URLs and sitemap address after choosing a hosting platform.
 
 ### 5. Responsive Design and Performance
 

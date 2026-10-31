@@ -1,27 +1,4 @@
-```xml
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    <url>
-        <loc>https://file:///C:/Users/Admin/OneDrive%20-%20ADvTECH%20Ltd/Le%20Petit%20Coffee%20shop/index.html</loc>
-    </url>
-
-    <url>
-        <loc>https://file:///C:/Users/Admin/OneDrive%20-%20ADvTECH%20Ltd/Le%20Petit%20Coffee%20shop/about.html</loc>
-    </url>
-
-    <url>
-        <loc>https://file:///C:/Users/Admin/OneDrive%20-%20ADvTECH%20Ltd/Le%20Petit%20Coffee%20shop/products.html</loc>
-    </url>
-
-    <url>
-        <loc>https://file:///C:/Users/Admin/OneDrive%20-%20ADvTECH%20Ltd/Le%20Petit%20Coffee%20shop/enquiry.html</loc>
-    </url>
-
-    <url>
-        <loc>https://file:///C:/Users/Admin/OneDrive%20-%20ADvTECH%20Ltd/Le%20Petit%20Coffee%20shop/contact.html</loc>
-    </url>
-
+    <!-- Add the five public page URLs after the site has a hosting address. -->
 </urlset>
-```
