@@ -4,7 +4,7 @@
 
 Le Petite Coffee is a small coffee shop located in Oakdene, Johannesburg South. The purpose of this project was to create a useful, professional and visually appealing website that provides the coffee shop with an online presence.
 
-The website provides visitors with information about Le Petite Coffee, its products and menu, contact details, location information and enquiry facilities. The website was designed to provide a consistent user experience across desktop, tablet and mobile devices.
+The website provides visitors with information about Le Petite Coffee, its products and menu, contact details, location information and enquiry facilities. It also includes a pickup-order builder; because no order service is configured, orders cannot yet be submitted through the website.
 
 ---
 
@@ -15,7 +15,7 @@ The main objectives of the website are to:
 - Improve Le Petite Coffee's online presence.
 - Provide clear information about the coffee shop.
 - Display the available products and menu categories.
-- Allow customers to submit enquiries.
+- Help customers prepare enquiries for email.
 - Provide contact and location information.
 - Provide access to the coffee shop's social media presence.
 - Make the website responsive across desktop, tablet and mobile screen sizes.
@@ -69,6 +69,8 @@ The menu includes:
 - Light meals.
 
 The products are displayed using structured content sections and styled menu cards.
+
+The page also includes menu search and a pickup-order builder. Customers can add multiple items, select sizes and quantities, view the calculated total, and request a pickup date and time. Online order submission is not connected to a service yet.
 
 ### 3.4 Enquiry (`enquiry.html`)
 
@@ -240,6 +242,10 @@ The website includes:
 - Focus states on form controls.
 - JavaScript form validation.
 - Form feedback.
+- Searchable menu.
+- Image enlargement using a lightbox.
+- Coffee-cup loading animation on page load.
+- Pickup-order builder with multiple items, sizes, quantities, pickup date and time.
 - Google Maps location functionality.
 - Social media links.
 - Interactive visual effects.
@@ -264,6 +270,8 @@ The enquiry form allows visitors to submit an enquiry by providing:
 
 Form controls are styled using CSS and validated using JavaScript.
 
+Submitting the form opens a prefilled email in the visitor's email application. The visitor must send it; the website cannot confirm delivery.
+
 ### Contact Form
 
 The Contact page includes a contact form that allows visitors to provide their details and message.
@@ -275,6 +283,8 @@ The form is designed with:
 - Required input fields where appropriate.
 - Validation.
 - User feedback.
+
+Submitting the contact form opens a prefilled email to `bonjour@lepetite.co.za` in the visitor's email application. The visitor must send the email manually; the website does not send it directly or confirm delivery.
 
 ---
 
@@ -354,7 +364,7 @@ Le-Petite-Coffee/
 │
 ├── README.md
 │
-├── CHANGELOG-CSS.md
+├── CHANGELOG.md
 │
 ├── index.html
 ├── about.html
@@ -365,7 +375,7 @@ Le-Petite-Coffee/
 ├── css/
 │   └── style.css
 │
-├── js/
+├── javascript/
 │   └── script.js
 │
 └── images/
@@ -381,10 +391,10 @@ Le-Petite-Coffee/
 | `enquiry.html` | Customer enquiry page |
 | `contact.html` | Contact page |
 | `css/style.css` | Main website stylesheet |
-| `js/script.js` | JavaScript functionality |
+| `javascript/script.js` | JavaScript functionality |
 | `images/` | Website images |
 | `README.md` | Project documentation |
-| `CHANGELOG-CSS.md` | CSS development and change log |
+| `CHANGELOG.md` | Project change log |
 
 ---
 
@@ -394,19 +404,16 @@ The website was developed by creating the individual HTML pages first and then a
 
 JavaScript was added to provide interactive functionality and form validation.
 
-The website was tested during development to identify and correct issues involving:
+The website was opened and tested locally in the integrated browser from the Visual Studio Code workspace. Checks covered:
 
 - Page navigation.
-- Layout.
-- Images.
-- Forms.
-- Buttons.
-- Responsive behaviour.
-- Mobile layouts.
-- Map functionality.
-- User interaction.
+- Page layout and image display.
+- Image lightbox interactions.
+- Menu search.
+- Form validation and email handoff.
+- Pickup item selection, size pricing, totals and time validation.
 
-The website was checked across different screen sizes to ensure that content remained readable and usable.
+The website has not been deployed. Email delivery and online order receipt cannot be tested until an email/order service is connected.
 
 ---
 
@@ -424,9 +431,9 @@ The change log documents the development of the CSS and the improvements made du
 
 ## 16. Change Log
 
-A separate `CHANGELOG-CSS.md` file was created to document the development of the website's CSS.
+A separate `CHANGELOG.md` file was created to document project development and changes.
 
-The CSS change log records changes such as:
+The change log records changes such as:
 
 - Initial stylesheet development.
 - General website styling.
@@ -481,103 +488,56 @@ https://www.w3.org/TR/css/
 
 **Year:** 2026
 
-## Part 3: Enhancing Functionality and SEO
+## Part 3: Functionality, Ordering and Testing
 
 ### 1. JavaScript Enhancements
 
-JavaScript was used to improve the functionality and interactivity of the Le Petite Coffee website.
-
-The enhancements include menu search functionality, image enlargement through a lightbox, form validation and user feedback. These features were added to improve usability and allow visitors to interact more easily with the website.
+The shared JavaScript file (`javascript/script.js`) provides menu search, image lightboxes, a coffee-cup page-loading animation, form validation and pickup-order calculations.
 
 ### 2. Form Functionality and Validation
 
-The enquiry and contact forms were improved using HTML form attributes and JavaScript validation.
+The enquiry and contact forms validate required fields. Submitting either form prepares an email addressed to `bonjour@lepetite.co.za` in the visitor's email application. The visitor must send that email themselves. The static website does not send emails or verify receipt.
 
-The enquiry form collects the customer's contact information, enquiry category and message. It provides feedback after valid input is submitted.
+### 3. Pickup Ordering
 
-The contact form collects general messages and prepares an email using the recipient address configured in the JavaScript code. The email-submission method and recipient must be configured and tested before the website is considered fully operational.
+The Products/Menu page includes a pickup-order builder covering the menu's coffee, tea, hot chocolate, pastries, sandwiches and light meals. Customers can add multiple items, select a size and quantity, see item prices and the order total, and request a pickup date and time. Pickup time choices are limited to 6:00 a.m.–7:30 p.m. in 15-minute increments.
 
-### 3. Search Engine Optimisation
+Size and price options use the prices shown on the menu. For specialty coffee and tea, which did not previously list size prices, the order form uses the listed price for Small and adds R10 for Large.
 
-SEO improvements include page-specific title tags, meta descriptions, structured headings, descriptive image alternative text and internal links.
+**Online order submission is not configured.** No order service endpoint has been provided, so the form does not send or place orders. It displays this limitation rather than claiming an order was received. Configure a form/order service and its public HTTPS endpoint before accepting online orders.
 
-The website also includes `robots.txt` and `sitemap.xml` files to help search engines discover the website's pages after publication.
-
-### 4. Responsive Design and Performance
-
-The existing CSS media queries were retained and reviewed to support desktop, tablet and mobile layouts.
-
-Image sizes, loading behaviour and layout consistency were also considered as part of the performance improvements.
-
-### 5. Testing
-
-The website should be tested to confirm that:
-
-* Navigation links open the correct pages.
-* Menu search filters items correctly.
-* Images open in the lightbox and can be closed.
-* Forms reject invalid or incomplete input.
-* Valid form input produces appropriate feedback.
-* The contact email workflow works on a configured device.
-* The website remains usable on mobile screens.
-* SEO metadata is present on all five pages.
-
-### 6. Deployment
-
-The website is intended to be published using a free static website hosting platform. After deployment, the final website URL must be added to the sitemap and robots file.
-
-### 7. Change Log
-
-The Part 3 change log should record the JavaScript functionality, form changes, SEO improvements, performance changes, testing corrections and deployment activities. All corrections made in response to Part 2 feedback should also be documented.
-## Part 3: Enhancing Functionality and SEO
-
-### 1. JavaScript Enhancements
-
-JavaScript was used to improve the functionality and interactivity of the Le Petite Coffee website.
-
-The enhancements include menu search functionality, image enlargement through a lightbox, form validation and user feedback. These features were added to improve usability and allow visitors to interact more easily with the website.
-
-### 2. Form Functionality and Validation
-
-The enquiry and contact forms were improved using HTML form attributes and JavaScript validation.
-
-The enquiry form collects the customer's contact information, enquiry category and message. It provides feedback after valid input is submitted.
-
-The contact form collects general messages and prepares an email using the recipient address configured in the JavaScript code. The email-submission method and recipient must be configured and tested before the website is considered fully operational.
-
-### 3. Search Engine Optimisation
+### 4. Search Engine Optimisation
 
 SEO improvements include page-specific title tags, meta descriptions, structured headings, descriptive image alternative text and internal links.
 
-The website also includes `robots.txt` and `sitemap.xml` files to help search engines discover the website's pages after publication.
+The project includes `robots.txt` and `sitemap.xml`. The website has not been deployed; update these files with the final public website URL before publishing.
 
-### 4. Responsive Design and Performance
+### 5. Responsive Design and Performance
 
-The existing CSS media queries were retained and reviewed to support desktop, tablet and mobile layouts.
+Below-the-fold content images use native lazy loading. The coffee-cup loader appears during page loading and then fades away. Its animation respects the user's reduced-motion preference.
 
-Image sizes, loading behaviour and layout consistency were also considered as part of the performance improvements.
+### 6. Testing
 
-### 5. Testing
+The site was opened and tested locally from the Visual Studio Code workspace in the integrated browser; it has **not** been deployed. Checks included:
 
-The website should be tested to confirm that:
+- Menu searches, including matching and no-match results.
+- Opening and closing enlarged images on the Home and Products pages.
+- Pickup prices and size choices for all 13 orderable menu options.
+- Multi-item order totals and quantity calculations.
+- Rejection of pickup times outside the configured hours.
+- Confirmation that pickup orders are not reported as submitted while no order endpoint is configured.
+- The enquiry email handoff; actual email delivery and receipt cannot be verified by the static site.
 
-* Navigation links open the correct pages.
-* Menu search filters items correctly.
-* Images open in the lightbox and can be closed.
-* Forms reject invalid or incomplete input.
-* Valid form input produces appropriate feedback.
-* The contact email workflow works on a configured device.
-* The website remains usable on mobile screens.
-* SEO metadata is present on all five pages.
+### 7. Deployment Status
 
-### 6. Deployment
+The website has been tested locally in Visual Studio Code and is not currently claimed to be live or deployed. A hosting platform, final public URL, working email/order service and production verification are still required before it can be considered published and fully operational.
 
-The website is intended to be published using a free static website hosting platform. After deployment, the final website URL must be added to the sitemap and robots file.
+### 8. References
 
-### 7. Change Log
+Mozilla Developer Network (MDN) (n.d.) *JavaScript*. Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript (Accessed: 28 October 2026).
 
-The Part 3 change log should record the JavaScript functionality, form changes, SEO improvements, performance changes, testing corrections and deployment activities. All corrections made in response to Part 2 feedback should also be documented.
+Mozilla Developer Network (MDN) (n.d.) *HTML forms*. Available at: https://developer.mozilla.org/en-US/docs/Web/HTML (Accessed: 29 October 2026).
 
-### 8.Refrences
+Google Search Central (n.d.) *SEO Starter Guide*. Available at: https://developers.google.com/search/docs/fundamentals/seo-starter-guide (Accessed: 29 October 2026).
 
-Mozilla Development (MDN) (n.d)JavaScript. Available at:https://developer.mozilla.org/en-US/docs/Web/JavaScript (Accessed: 28 October 2026)
+Sitemaps.org (n.d.) *Sitemaps XML format*. Available at: https://www.sitemaps.org/protocol.html (Accessed: 31 October 2026).

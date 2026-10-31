@@ -13,6 +13,18 @@
 
 <body>
 
+    <div class="page-loader" role="status" aria-label="Loading Le Petite Coffee">
+        <div class="coffee-loader" aria-hidden="true">
+            <div class="coffee-steam">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="coffee-cup"></div>
+        </div>
+        <p>Brewing your page...</p>
+    </div>
+
     <!-- =========================
          HEADER AND NAVIGATION
     ========================== -->
@@ -295,6 +307,95 @@
         </section>
 
 
+        <section class="pickup-order-section">
+            <div class="pickup-order-content">
+                <h2>Order for Pickup</h2>
+                <p>
+                    Add any items from our menu and choose a collection date and time.
+                    Online order submission is not configured yet, so orders cannot be sent from this form.
+                </p>
+
+                <form id="pickup-order-form">
+                    <div class="form-group">
+                        <label for="order-name">Full Name:</label>
+                        <input type="text" id="order-name" name="name" autocomplete="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="order-email">Email Address:</label>
+                        <input type="email" id="order-email" name="email" autocomplete="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="order-phone">Phone Number:</label>
+                        <input type="tel" id="order-phone" name="phone" autocomplete="tel" required>
+                    </div>
+
+                    <div id="order-items"></div>
+                    <button type="button" class="btn order-add-item">Add another item</button>
+
+                    <div class="form-group">
+                        <label for="pickup-date">Preferred Pickup Date:</label>
+                        <input type="date" id="pickup-date" name="pickupDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pickup-time">Preferred Pickup Time:</label>
+                        <input type="time" id="pickup-time" name="pickupTime" min="06:00" max="19:30" step="900" required>
+                    </div>
+
+                    <p id="order-total" class="pickup-order-total" role="status" aria-live="polite">
+                        Choose a menu item to see your order total.
+                    </p>
+                    <p id="order-status" class="order-status" role="status" aria-live="polite"></p>
+
+                    <button type="submit" class="btn">Place Pickup Order</button>
+                </form>
+
+                <template id="order-item-template">
+                    <fieldset class="order-item-row">
+                        <legend>Order item</legend>
+                        <div class="form-group">
+                            <label>Menu item:</label>
+                            <select class="order-product" required>
+                                <option value="">Select an item</option>
+                                <optgroup label="Coffee">
+                                    <option value="fresh-coffee">Freshly brewed coffee</option>
+                                    <option value="espresso">Espresso</option>
+                                    <option value="cappuccino">Cappuccino</option>
+                                    <option value="latte">Latte</option>
+                                    <option value="mocha">Mocha</option>
+                                </optgroup>
+                                <optgroup label="Tea">
+                                    <option value="rooibos-tea">Rooibos Tea</option>
+                                    <option value="green-tea">Green Tea</option>
+                                    <option value="black-tea">Black Tea</option>
+                                    <option value="herbal-tea">Herbal Tea</option>
+                                </optgroup>
+                                <optgroup label="Other menu items">
+                                    <option value="hot-chocolate">Hot Chocolate</option>
+                                    <option value="pastry">Fresh Pastry</option>
+                                    <option value="sandwich">Sandwich</option>
+                                    <option value="light-meal">Light Meal</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Size:</label>
+                            <select class="order-size" required disabled>
+                                <option value="">Select an item first</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Quantity:</label>
+                            <input class="order-quantity" type="number" min="1" max="20" value="1" required>
+                        </div>
+                        <button type="button" class="btn order-remove-item">Remove item</button>
+                    </fieldset>
+                </template>
+            </div>
+        </section>
+
         <!-- =========================
              ENQUIRY CALL TO ACTION
         ========================== -->
@@ -360,7 +461,7 @@
 
 
     <!-- Link to JavaScript -->
-    <script src="js/script.js"></script>
+    <script src="javascript/script.js"></script>
 
 </body>
 

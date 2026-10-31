@@ -35,6 +35,110 @@ body {
     overflow-x: hidden;
 }
 
+.page-loader {
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 12px;
+    background: #f8f1e5;
+    color: #3e2723;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.page-loader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.coffee-loader {
+    display: grid;
+    justify-items: center;
+    height: 74px;
+}
+
+.coffee-steam {
+    display: flex;
+    gap: 9px;
+    height: 29px;
+}
+
+.coffee-steam span {
+    width: 5px;
+    height: 17px;
+    border-left: 2px solid #8b6b55;
+    border-radius: 50%;
+    opacity: 0;
+    animation: coffee-steam-rise 1.15s ease-in-out infinite;
+}
+
+.coffee-steam span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.coffee-steam span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.coffee-cup {
+    position: relative;
+    width: 52px;
+    height: 38px;
+    border: 3px solid #6f4e37;
+    border-top: 5px solid #6f4e37;
+    border-radius: 4px 4px 15px 15px;
+    background: linear-gradient(to bottom, #8b5e3c 0 42%, #f8f1e5 43%);
+    animation: coffee-cup-bob 1.15s ease-in-out infinite;
+}
+
+.coffee-cup::after {
+    position: absolute;
+    top: 5px;
+    right: -13px;
+    width: 9px;
+    height: 15px;
+    border: 3px solid #6f4e37;
+    border-left: 0;
+    border-radius: 0 9px 9px 0;
+    content: "";
+}
+
+.page-loader p {
+    font-weight: bold;
+}
+
+@keyframes coffee-steam-rise {
+    0% {
+        opacity: 0;
+        transform: translateY(8px) scaleY(0.7);
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-5px) scaleY(1.1);
+    }
+}
+
+@keyframes coffee-cup-bob {
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-loader,
+    .coffee-steam span,
+    .coffee-cup {
+        animation: none;
+        transition: none;
+    }
+}
+
 img,
 iframe {
     max-width: 100%;
@@ -576,10 +680,31 @@ section {
     margin: auto;
 }
 
+.order-item-row {
+    margin-bottom: 20px;
+    padding: 18px;
+    border: 1px solid #b8aa96;
+    border-radius: 8px;
+}
+
+.order-item-row legend {
+    padding: 0 8px;
+    font-weight: bold;
+}
+
+.order-item-row .form-group {
+    margin-bottom: 14px;
+}
+
+.order-add-item {
+    margin-bottom: 24px;
+}
+
 .pickup-order-total {
     margin: 15px 0;
     color: #2f4f3a;
     font-weight: bold;
+    overflow-wrap: anywhere;
 }
 
 .order-status.error {

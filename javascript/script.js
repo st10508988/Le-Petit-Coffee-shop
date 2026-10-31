@@ -2,6 +2,29 @@
 // LE PETITE COFFEE - PART 3 JAVASCRIPT
 // ==========================================
 
+const pageLoader = document.querySelector(".page-loader");
+
+if (pageLoader) {
+    function hidePageLoader() {
+        pageLoader.classList.add("is-hidden");
+        window.setTimeout(function () {
+            pageLoader.remove();
+        }, 400);
+    }
+
+    if (document.readyState === "complete") {
+        hidePageLoader();
+    } else {
+        window.addEventListener("load", hidePageLoader, { once: true });
+    }
+
+    window.addEventListener("pageshow", function (event) {
+        if (event.persisted) {
+            pageLoader.remove();
+        }
+    }, { once: true });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const businessEmail = "bonjour@lepetite.co.za";
@@ -70,25 +93,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const pickupOrderForm = document.getElementById("pickup-order-form");
 
     if (pickupOrderForm) {
-        const productSelect = pickupOrderForm.elements["product"];
-        const sizeSelect = pickupOrderForm.elements["size"];
-        const quantityInput = pickupOrderForm.elements["quantity"];
+        const orderItems = document.getElementById("order-items");
+        const itemTemplate = document.getElementById("order-item-template");
         const totalMessage = document.getElementById("order-total");
         const orderStatus = document.getElementById("order-status");
         const pickupDateInput = pickupOrderForm.elements["pickupDate"];
+        let orderItemCounter = 0;
         const productOptions = {
-            "fresh-coffee": {
-                name: "Freshly brewed coffee",
-                sizes: [{ name: "Small", price: 20 }, { name: "Large", price: 30 }]
-            },
-            espresso: { name: "Espresso", sizes: [{ name: "Standard", price: 20 }] },
-            cappuccino: { name: "Cappuccino", sizes: [{ name: "Standard", price: 25 }] },
-            latte: { name: "Latte", sizes: [{ name: "Standard", price: 30 }] },
-            mocha: { name: "Mocha", sizes: [{ name: "Standard", price: 35 }] },
-            "rooibos-tea": { name: "Rooibos Tea", sizes: [{ name: "Single size", price: 20 }] },
-            "green-tea": { name: "Green Tea", sizes: [{ name: "Single size", price: 25 }] },
-            "black-tea": { name: "Black Tea", sizes: [{ name: "Single size", price: 30 }] },
-            "herbal-tea": { name: "Herbal Tea", sizes: [{ name: "Single size", price: 35 }] }
+            "fresh-coffee": { name: "Freshly brewed coffee", sizes: [{ name: "Small", price: 20 }, { name: "Large", price: 30 }] },
+            espresso: { name: "Espresso", sizes: [{ name: "Small", price: 20 }, { name: "Large", price: 30 }] },
+            cappuccino: { name: "Cappuccino", sizes: [{ name: "Small", price: 25 }, { name: "Large", price: 35 }] },
+            latte: { name: "Latte", sizes: [{ name: "Small", price: 30 }, { name: "Large", price: 40 }] },
+            mocha: { name: "Mocha", sizes: [{ name: "Small", price: 35 }, { name: "Large", price: 45 }] },
+            "rooibos-tea": { name: "Rooibos Tea", sizes: [{ name: "Small", price: 20 }, { name: "Large", price: 30 }] },
+            "green-tea": { name: "Green Tea", sizes: [{ name: "Small", price: 25 }, { name: "Large", price: 35 }] },
+            "black-tea": { name: "Black Tea", sizes: [{ name: "Small", price: 30 }, { name: "Large", price: 40 }] },
+            "herbal-tea": { name: "Herbal Tea", sizes: [{ name: "Small", price: 35 }, { name: "Large", price: 45 }] },
+            "hot-chocolate": { name: "Hot Chocolate", sizes: [{ name: "Small", price: 25 }, { name: "Large", price: 35 }] },
+            pastry: { name: "Fresh Pastry", sizes: [{ name: "Small", price: 15 }, { name: "Large", price: 25 }] },
+            sandwich: { name: "Sandwich", sizes: [{ name: "Small", price: 30 }, { name: "Large", price: 40 }] },
+            "light-meal": { name: "Light Meal", sizes: [{ name: "Small", price: 30 }, { name: "Large", price: 40 }] }
         };
 
         const today = new Date();
@@ -97,47 +121,97 @@ document.addEventListener("DOMContentLoaded", function () {
         ).toISOString().slice(0, 10);
         pickupDateInput.min = localToday;
 
-        function updateOrderOptions() {
-            const product = productOptions[productSelect.value];
-            sizeSelect.replaceChildren();
+        function updateOrderTotal() {
+            const rows = Array.from(orderItems.querySelectorAll(".order-item-row"));
+            const selectedItems = rows.map(function (row) {
+                const product = productOptions[row.querySelector(".order-product").value];
+                const sizeName = row.querySelector(".order-size").value;
+                const size = product && product.sizes.find(function (option) {
+                    return option.name === sizeName;
+                });
 
-            if (!product) {
-                sizeSelect.add(new Option("Select a drink first", ""));
-                sizeSelect.disabled = true;
-                totalMessage.textContent = "Select a drink to see its price.";
+                if (!product || !size) {
+                    return null;
+                }
+
+                const quantity = Number(row.querySelector(".order-quantity").value);
+                return {
+                    name: product.name + " (" + size.name + ") x " + quantity,
+                    total: size.price * quantity
+                };
+            }).filter(Boolean);
+
+            if (selectedItems.length === 0) {
+                totalMessage.textContent = "Choose a menu item to see your order total.";
                 return;
             }
 
-            product.sizes.forEach(function (size) {
-                sizeSelect.add(new Option(
-                    size.name + " - R" + size.price.toFixed(2),
-                    size.name
-                ));
+            const itemsSummary = selectedItems.map(function (item) {
+                return item.name + " — R" + item.total.toFixed(2);
+            }).join(" | ");
+            const orderTotal = selectedItems.reduce(function (total, item) {
+                return total + item.total;
+            }, 0);
+
+            totalMessage.textContent =
+                itemsSummary + " | Order total: R" + orderTotal.toFixed(2);
+        }
+
+        function addOrderItem() {
+            const row = itemTemplate.content.firstElementChild.cloneNode(true);
+            const itemNumber = ++orderItemCounter;
+            const productSelect = row.querySelector(".order-product");
+            const sizeSelect = row.querySelector(".order-size");
+            const quantityInput = row.querySelector(".order-quantity");
+            const labels = row.querySelectorAll(".form-group label");
+
+            row.querySelector("legend").textContent = "Order item " + itemNumber;
+            productSelect.name = "items[" + itemNumber + "][product]";
+            productSelect.id = "order-product-" + itemNumber;
+            labels[0].htmlFor = productSelect.id;
+            sizeSelect.name = "items[" + itemNumber + "][size]";
+            sizeSelect.id = "order-size-" + itemNumber;
+            labels[1].htmlFor = sizeSelect.id;
+            quantityInput.name = "items[" + itemNumber + "][quantity]";
+            quantityInput.id = "order-quantity-" + itemNumber;
+            labels[2].htmlFor = quantityInput.id;
+
+            productSelect.addEventListener("change", function () {
+                const product = productOptions[productSelect.value];
+                sizeSelect.replaceChildren();
+
+                if (!product) {
+                    sizeSelect.add(new Option("Select an item first", ""));
+                    sizeSelect.disabled = true;
+                } else {
+                    product.sizes.forEach(function (size) {
+                        sizeSelect.add(new Option(
+                            size.name + " - R" + size.price.toFixed(2),
+                            size.name
+                        ));
+                    });
+                    sizeSelect.disabled = false;
+                }
+
+                updateOrderTotal();
             });
-            sizeSelect.disabled = false;
+            sizeSelect.addEventListener("change", updateOrderTotal);
+            quantityInput.addEventListener("input", updateOrderTotal);
+            row.querySelector(".order-remove-item").addEventListener("click", function () {
+                row.remove();
+                if (orderItems.children.length === 0) {
+                    addOrderItem();
+                } else {
+                    updateOrderTotal();
+                }
+            });
+
+            orderItems.appendChild(row);
             updateOrderTotal();
         }
 
-        function updateOrderTotal() {
-            const product = productOptions[productSelect.value];
-            const size = product && product.sizes.find(function (option) {
-                return option.name === sizeSelect.value;
-            });
-
-            if (!size) {
-                totalMessage.textContent = "Select a drink to see its price.";
-                return;
-            }
-
-            const quantity = Number(quantityInput.value);
-            totalMessage.textContent =
-                product.name + " (" + size.name + ") x " + quantity +
-                " — Total: R" + (size.price * quantity).toFixed(2);
-        }
-
-        productSelect.addEventListener("change", updateOrderOptions);
-        sizeSelect.addEventListener("change", updateOrderTotal);
-        quantityInput.addEventListener("input", updateOrderTotal);
+        document.querySelector(".order-add-item").addEventListener("click", addOrderItem);
+        addOrderItem();
 
         pickupOrderForm.addEventListener("submit", async function (event) {
             event.preventDefault();
@@ -188,8 +262,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 orderStatus.textContent =
                     "Your pickup order was submitted. The shop will contact you to confirm it.";
                 pickupOrderForm.reset();
-                sizeSelect.replaceChildren(new Option("Select a drink first", ""));
-                sizeSelect.disabled = true;
+                orderItems.replaceChildren();
+                addOrderItem();
                 pickupDateInput.min = localToday;
                 updateOrderTotal();
             } catch (error) {
