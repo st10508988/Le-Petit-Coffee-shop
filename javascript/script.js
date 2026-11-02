@@ -277,7 +277,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ------------------------------------------
-    // 3. IMAGE LIGHTBOX
+    // 3. ABOUT PAGE REVIEW CAROUSEL
+    // ------------------------------------------
+
+    const reviewCarousel = document.querySelector(".review-carousel");
+
+    if (reviewCarousel) {
+        const reviewSlides = Array.from(
+            reviewCarousel.querySelectorAll(".review-slide")
+        );
+        const reviewIndicators = Array.from(
+            reviewCarousel.querySelectorAll(".review-indicators button")
+        );
+        const previousReviewButton =
+            reviewCarousel.querySelector(".review-previous");
+        const nextReviewButton =
+            reviewCarousel.querySelector(".review-next");
+        let currentReviewIndex = 0;
+
+        function showReview(index) {
+            currentReviewIndex =
+                (index + reviewSlides.length) % reviewSlides.length;
+
+            reviewSlides.forEach(function (slide, slideIndex) {
+                slide.hidden = slideIndex !== currentReviewIndex;
+                reviewIndicators[slideIndex].setAttribute(
+                    "aria-pressed",
+                    String(slideIndex === currentReviewIndex)
+                );
+            });
+        }
+
+        previousReviewButton.addEventListener("click", function () {
+            showReview(currentReviewIndex - 1);
+        });
+
+        nextReviewButton.addEventListener("click", function () {
+            showReview(currentReviewIndex + 1);
+        });
+
+        reviewIndicators.forEach(function (indicator, index) {
+            indicator.addEventListener("click", function () {
+                showReview(index);
+            });
+        });
+    }
+
+
+    // ------------------------------------------
+    // 4. IMAGE LIGHTBOX
     // ------------------------------------------
 
     const galleryImages = document.querySelectorAll(
@@ -359,7 +407,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ------------------------------------------
-    // 4. ENQUIRY FORM VALIDATION
+    // 5. ENQUIRY FORM VALIDATION
     // ------------------------------------------
 
     const enquiryForm = document.getElementById("enquiry-form");
@@ -430,7 +478,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ------------------------------------------
-    // 5. CONTACT FORM VALIDATION
+    // 6. CONTACT FORM VALIDATION
     // ------------------------------------------
 
     const contactForm = document.getElementById("contact-form");
@@ -476,7 +524,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ------------------------------------------
-    // 6. CURRENT YEAR IN FOOTER
+    // 7. CURRENT YEAR IN FOOTER
     // ------------------------------------------
 
     const yearElement = document.getElementById("current-year");

@@ -119,6 +119,28 @@
 
 
         <!-- =========================
+             OPENING HOURS
+        ========================== -->
+        <section class="about-section">
+
+            <div class="about-content">
+
+                <h2>Opening Hours</h2>
+
+                <p>
+                    <strong>Monday to Sunday:</strong> 6:00 AM - 7:30 PM
+                </p>
+
+                <p>
+                    <strong>Public holidays:</strong> 6:00 AM - 5:00 PM
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
              MISSION
         ========================== -->
         <section class="mission-section">
@@ -201,6 +223,93 @@
                     <img src="images/friends.jpg" alt="Le Petit Coffee shop branding showcasing welcoming cafe identity" width="600" height="400">
                 </div>
 
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CUSTOMER REVIEWS
+        ========================== -->
+        <section class="customer-reviews" aria-labelledby="customer-reviews-heading">
+
+            <h2 id="customer-reviews-heading">What Our Customers Say</h2>
+            <p class="review-disclaimer">
+                The following are sample reviews for demonstration and are not
+                actual customer testimonials.
+            </p>
+
+            <div class="review-carousel"
+                 role="region"
+                 aria-roledescription="carousel"
+                 aria-label="Sample customer reviews">
+                <div class="review-slides" aria-live="polite">
+                    <figure class="review-slide"
+                            id="review-slide-1"
+                            role="group"
+                            aria-roledescription="slide"
+                            aria-label="1 of 3">
+                        <blockquote>
+                            “A cosy place to enjoy a warm drink and take a
+                            break.”
+                        </blockquote>
+                        <figcaption>Sample customer</figcaption>
+                    </figure>
+
+                    <figure class="review-slide"
+                            id="review-slide-2"
+                            role="group"
+                            aria-roledescription="slide"
+                            aria-label="2 of 3"
+                            hidden>
+                        <blockquote>
+                            “The welcoming atmosphere makes it a lovely spot
+                            to catch up with friends.”
+                        </blockquote>
+                        <figcaption>Sample customer</figcaption>
+                    </figure>
+
+                    <figure class="review-slide"
+                            id="review-slide-3"
+                            role="group"
+                            aria-roledescription="slide"
+                            aria-label="3 of 3"
+                            hidden>
+                        <blockquote>
+                            “A nice place to enjoy coffee and a bite to eat.”
+                        </blockquote>
+                        <figcaption>Sample customer</figcaption>
+                    </figure>
+                </div>
+
+                <div class="review-controls">
+                    <button class="review-previous"
+                            type="button"
+                            aria-label="Show previous review">
+                        Previous
+                    </button>
+                    <div class="review-indicators"
+                         role="group"
+                         aria-label="Choose a review">
+                        <button type="button"
+                                aria-label="Show review 1"
+                                aria-controls="review-slide-1"
+                                aria-pressed="true"></button>
+                        <button type="button"
+                                aria-label="Show review 2"
+                                aria-controls="review-slide-2"
+                                aria-pressed="false"></button>
+                        <button type="button"
+                                aria-label="Show review 3"
+                                aria-controls="review-slide-3"
+                                aria-pressed="false"></button>
+                    </div>
+                    <button class="review-next"
+                            type="button"
+                            aria-label="Show next review">
+                        Next
+                    </button>
+                </div>
             </div>
 
         </section>

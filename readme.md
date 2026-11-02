@@ -49,6 +49,8 @@ The About Us page provides information about the organisation and its purpose.
 It includes:
 
 - Organisation background.
+- Opening hours from Monday to Sunday and on public holidays.
+- A customer review carousel with sample demonstration content.
 - Mission statement.
 - Vision statement.
 - Target audience information.
@@ -97,7 +99,7 @@ It includes:
 - Opening hours.
 - Social media links.
 - Contact form.
-- A clickable location image that opens Google Maps directions in a new tab.
+- An interactive embedded map with touch and drag instructions and a link to Google Maps directions.
 - Call-to-action elements.
 
 ---
