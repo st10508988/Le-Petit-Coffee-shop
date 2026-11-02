@@ -49,7 +49,7 @@ The About Us page provides information about the organisation and its purpose.
 It includes:
 
 - Organisation background.
-- Opening hours from Monday to Sunday and on public holidays.
+- Opening hours from Monday to Sunday; closed on public holidays.
 - A customer review carousel with sample demonstration content.
 - Mission statement.
 - Vision statement.
@@ -534,7 +534,33 @@ The site was opened and tested locally from the Visual Studio Code workspace in 
 
 The website has been tested locally in Visual Studio Code and is not currently claimed to be live or deployed. A hosting platform, final public URL, working email/order service and production verification are still required before it can be considered published and fully operational.
 
-### 8. References
+### 8. Website Screenshots
+
+### Homepage
+![Le Petite Coffee Homepage](images/screenshots/Homepage.png)
+
+### Homepage iphone 
+![Homepage iphone 16](images/screenshots/Homaepageiphone.png)
+
+### About Us
+![About Us Page](images/screenshots/Aboutpage.png)
+
+### Menu
+![Menu Page](images/screenshots/Menupage.png)
+
+### Enquiry 
+![Enquiry Page](images/screenshots/Enquirypage.png)
+
+### Contact Us
+![Contact Page](images/screenshots/Contactpage.png)
+
+### Changelog.md
+![Changelog updated](images/screenshots/changelog.png)
+
+### Sitemap.xml
+![Sitemap.xml](images/screenshots/sitemap.png)
+
+### 9. References
 
 Mozilla Developer Network (MDN) (n.d.) *JavaScript*. Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript (Accessed: 28 October 2026).
 
